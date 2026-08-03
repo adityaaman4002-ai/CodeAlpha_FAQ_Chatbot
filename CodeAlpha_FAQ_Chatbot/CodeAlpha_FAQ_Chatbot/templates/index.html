@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HelpDesk FAQ Bot — CodeAlpha</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="desk">
+
+  <aside class="stub">
+    <div class="stub-top">
+      <span class="dot"></span>
+      <span class="stub-label">SUPPORT&nbsp;DESK</span>
+    </div>
+    <h1 class="stub-title">HelpDesk<br>FAQ&nbsp;Bot</h1>
+    <p class="stub-sub">Ask about your account, billing, technical issues, or privacy &amp; security — matched instantly against our knowledge base using TF‑IDF &amp; cosine similarity.</p>
+
+    <div class="stub-section">
+      <span class="stub-heading">TOPICS</span>
+      <ul class="topic-list" id="topicList">
+        <li>Loading…</li>
+      </ul>
+    </div>
+
+    <div class="stub-section">
+      <span class="stub-heading">TRY ASKING</span>
+      <div class="chip-row">
+        <button class="chip" data-q="How do I reset my password?">Reset password</button>
+        <button class="chip" data-q="How do I get a refund?">Get a refund</button>
+        <button class="chip" data-q="Why is my internet so slow?">Slow internet</button>
+        <button class="chip" data-q="How do I enable two-factor authentication?">Enable 2FA</button>
+      </div>
+    </div>
+
+    <div class="stub-footer">
+      <span class="ticket-no" id="ticketNo">TICKET&nbsp;#000001</span>
+    </div>
+  </aside>
+
+  <main class="chat-panel">
+    <header class="chat-header">
+      <div>
+        <span class="status-dot"></span>
+        <span class="chat-header-title">Live session</span>
+      </div>
+      <span class="chat-header-sub" id="confidenceBadge">awaiting query…</span>
+    </header>
+
+    <div class="messages" id="messages">
+      <div class="msg bot">
+        <div class="bubble">
+          Hi, I'm the HelpDesk bot. Ask me anything about your account, billing, technical issues, or privacy &amp; security — I'll match it to the closest answer in our FAQ database.
+        </div>
+      </div>
+    </div>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input type="text" id="userInput" placeholder="Type your question…" maxlength="300" required>
+      <button type="submit" id="sendBtn">Send</button>
+    </form>
+  </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
